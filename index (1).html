@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vértice RH | Consultoria de Recursos Humanos</title>
+<meta name="description" content="Recrutamento, avaliação e desenvolvimento de talento à medida da sua organização. Website fictício de demonstração.">
+<style>
+:root{
+  --ink:#14213d; --muted:#5b6578; --brand:#0f766e; --brand-dark:#0b5a54;
+  --bg:#ffffff; --soft:#f3f7f6; --line:#dfe7e5; --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1100px,92%);margin-inline:auto}
+section{padding:80px 0}
+h1,h2,h3{line-height:1.2}
+h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:12px}
+.eyebrow{color:var(--brand);font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.lead{color:var(--muted);max-width:620px}
+
+/* Botões */
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;border:2px solid var(--brand);cursor:pointer;font-size:1rem;transition:.2s}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-dark);border-color:var(--brand-dark)}
+.btn-ghost{color:var(--brand)}
+.btn-ghost:hover{background:var(--soft)}
+
+/* Cabeçalho */
+header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;font-size:1.25rem}
+.logo span{color:var(--brand)}
+.nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+.nav a:not(.btn):hover{color:var(--brand)}
+.nav .btn{padding:9px 20px}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--soft),#fff 70%);padding:100px 0 90px}
+.hero h1{font-size:clamp(2.1rem,5vw,3.4rem);max-width:760px;margin-bottom:20px}
+.hero .lead{font-size:1.15rem;margin-bottom:32px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:56px}
+.stats strong{display:block;font-size:1.8rem;color:var(--brand)}
+.stats span{color:var(--muted);font-size:.9rem}
+
+/* Cartões */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:40px}
+.card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:#fff;transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(20,33,61,.07)}
+.card .icon{font-size:1.6rem;margin-bottom:12px}
+.card h3{font-size:1.1rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.95rem}
+.alt{background:var(--soft)}
+
+/* Contacto */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:start}
+.contact-info p{margin-top:14px;color:var(--muted)}
+form{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:grid;gap:16px}
+label{font-weight:600;font-size:.9rem;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;width:100%;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--brand);border-color:transparent}
+textarea{min-height:100px;resize:vertical}
+.check{display:flex;gap:10px;font-weight:400;font-size:.85rem;color:var(--muted);align-items:flex-start}
+.check input{width:auto;margin-top:4px}
+.hp{position:absolute;left:-9999px}
+#status{font-size:.95rem;min-height:1.4em}
+#status.ok{color:#15803d}
+#status.err{color:#b91c1c}
+button:disabled{opacity:.6;cursor:wait}
+
+/* Rodapé */
+footer{background:var(--ink);color:#c9d1e0;padding:36px 0;font-size:.9rem}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+@media(max-width:800px){
+  .nav ul li:not(:last-child){display:none}
+  .contact-wrap{grid-template-columns:1fr}
+  section{padding:60px 0}
+}
+</style>
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#inicio" class="logo">Vértice<span>RH</span></a>
+    <ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#porque-nos">Porquê nós</a></li>
+      <li><a href="#contacto" class="btn btn-primary">Agendar reunião</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Consultoria de RH e Gestão de Talento</p>
+      <h1>As pessoas certas fazem crescer o seu negócio.</h1>
+      <p class="lead">Ajudamos as organizações a atrair, avaliar e desenvolver talento com soluções de Recursos Humanos à medida dos seus desafios.</p>
+      <div class="actions">
+        <a href="#contacto" class="btn btn-primary">Agendar uma reunião</a>
+        <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
+      </div>
+      <div class="stats">
+        <div><strong>+15</strong><span>anos de experiência</span></div>
+        <div><strong>+200</strong><span>organizações apoiadas</span></div>
+        <div><strong>94%</strong><span>clientes satisfeitos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="container">
+      <p class="eyebrow">Serviços</p>
+      <h2>Do recrutamento ao desenvolvimento.</h2>
+      <p class="lead">Acompanhamos cada etapa do ciclo de talento da sua organização.</p>
+      <div class="grid">
+        <article class="card"><div class="icon">🔍</div><h3>Recrutamento e Seleção</h3><p>Identificamos profissionais alinhados com as necessidades e a cultura da sua empresa.</p></article>
+        <article class="card"><div class="icon">🎯</div><h3>Assessment Centres</h3><p>Avaliação de competências e potencial com metodologias estruturadas.</p></article>
+        <article class="card"><div class="icon">✨</div><h3>Employer Branding</h3><p>Estratégias que reforçam a capacidade de atrair e reter talento.</p></article>
+        <article class="card"><div class="icon">📊</div><h3>People Analytics</h3><p>Dados de pessoas transformados em decisões estratégicas.</p></article>
+        <article class="card"><div class="icon">🧭</div><h3>Desenvolvimento de Liderança</h3><p>Apoio a líderes e equipas para enfrentar novos desafios.</p></article>
+        <article class="card"><div class="icon">🌱</div><h3>Talento Jovem</h3><p>Programas de atração, seleção e desenvolvimento de jovens profissionais.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="porque-nos" class="alt">
+    <div class="container">
+      <p class="eyebrow">Porquê a Vértice RH</p>
+      <h2>Mais do que consultoria. Uma parceria.</h2>
+      <div class="grid">
+        <article class="card"><h3>À medida da sua organização</h3><p>Soluções desenhadas para a sua realidade, cultura e objetivos.</p></article>
+        <article class="card"><h3>Decisões com fundamento</h3><p>Metodologias baseadas em evidência para decisões mais consistentes.</p></article>
+        <article class="card"><h3>Proximidade e compromisso</h3><p>Consultores especializados que acompanham cada desafio de perto.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="container contact-wrap">
+      <div class="contact-info">
+        <p class="eyebrow">Contacto</p>
+        <h2>Vamos conversar sobre os seus desafios?</h2>
+        <p>Preencha o formulário e a nossa equipa entrará em contacto para agendar uma reunião.</p>
+        <p><strong>E-mail:</strong> contacto@verticerh.example<br><strong>Local:</strong> Lisboa, Portugal</p>
+      </div>
+
+      <form id="contact-form" novalidate>
+        <label>Nome completo *
+          <input type="text" name="nome" required autocomplete="name">
+        </label>
+        <label>E-mail profissional *
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>Empresa *
+          <input type="text" name="empresa" required autocomplete="organization">
+        </label>
+        <label>Serviço pretendido *
+          <select name="servico" required>
+            <option value="">Selecione um serviço</option>
+            <option>Recrutamento e Seleção</option>
+            <option>Assessment Centres</option>
+            <option>Employer Branding</option>
+            <option>People Analytics</option>
+            <option>Desenvolvimento de Liderança</option>
+            <option>Talento Jovem</option>
+            <option>Outro / Ainda não sei</option>
+          </select>
+        </label>
+        <label>Mensagem (opcional)
+          <textarea name="mensagem"></textarea>
+        </label>
+        <!-- Honeypot anti-spam: bots preenchem, humanos não veem -->
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="check">
+          <input type="checkbox" name="consentimento" required>
+          Aceito o tratamento dos meus dados para resposta a este pedido de contacto.
+        </label>
+        <button type="submit" class="btn btn-primary" id="submit-btn">Solicitar reunião</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container row">
+    <span>© 2026 Vértice RH. Website fictício para demonstração.</span>
+    <span>Lisboa, Portugal</span>
+  </div>
+</footer>
+
+<!-- Chatbot de suporte 24h -->
+<button class="chat-fab" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel">💬 Suporte 24h</button>
+<div class="chat-panel" id="chat-panel" role="dialog" aria-label="Chat de suporte">
+  <div class="chat-head">
+    <div><strong>Suporte 24h</strong><small>Assistente virtual da Vértice RH</small></div>
+    <button class="chat-close" id="chat-close" aria-label="Fechar chat">×</button>
+  </div>
+  <div class="chat-body" id="chat-body" aria-live="polite"></div>
+  <form class="chat-form" id="chat-form">
+    <input type="text" id="chat-input" placeholder="Escreva a sua mensagem…" autocomplete="off" maxlength="1000" required>
+    <button type="submit" id="chat-send">Enviar</button>
+  </form>
+</div>
+
+<script>
+  // 👉 Cola aqui o URL do teu nó Webhook do n8n (método POST)
+  // Teste:    https://O-TEU-N8N/webhook-test/landing-rh
+  // Produção: https://O-TEU-N8N/webhook/landing-rh
+  const WEBHOOK_URL = "https://O-TEU-N8N/webhook-test/landing-rh";
+
+  const form = document.getElementById("contact-form");
+  const statusEl = document.getElementById("status");
+  const btn = document.getElementById("submit-btn");
+
+  function setStatus(msg, type) {
+    statusEl.textContent = msg;
+    statusEl.className = type || "";
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Honeypot preenchido = bot; finge sucesso e não envia
+    if (form.website.value) { setStatus("Pedido enviado.", "ok"); return; }
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const payload = {
+      nome: form.nome.value.trim(),
+      email: form.email.value.trim(),
+      empresa: form.empresa.value.trim(),
+      servico: form.servico.value,
+      mensagem: form.mensagem.value.trim(),
+      consentimento: form.consentimento.checked,
+      origem: "landing-page",
+      pagina: location.href,
+      enviadoEm: new Date().toISOString()
+    };
+
+    btn.disabled = true;
+    setStatus("A enviar…");
+
+    try {
+      const res = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      form.reset();
+      setStatus("Obrigado! Entraremos em contacto em breve.", "ok");
+    } catch (err) {
+      console.error(err);
+      setStatus("Não foi possível enviar. Tente novamente ou escreva-nos por e-mail.", "err");
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+<script src="chatbot.js"></script>
+</body>
+</html>

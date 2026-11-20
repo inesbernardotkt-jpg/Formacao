@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chatbot Vértice RH</title>
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body style="font-family:system-ui,sans-serif">
+
+<!-- Chatbot de suporte 24h -->
+<button class="chat-fab" id="chat-toggle" aria-expanded="false" aria-controls="chat-panel">💬 Suporte 24h</button>
+<div class="chat-panel" id="chat-panel" role="dialog" aria-label="Chat de suporte">
+  <div class="chat-head">
+    <div><strong>Suporte 24h</strong><small>Assistente virtual da Vértice RH</small></div>
+    <button class="chat-close" id="chat-close" aria-label="Fechar chat">×</button>
+  </div>
+  <div class="chat-body" id="chat-body" aria-live="polite"></div>
+  <form class="chat-form" id="chat-form">
+    <input type="text" id="chat-input" placeholder="Escreva a sua mensagem…" autocomplete="off" maxlength="1000" required>
+    <button type="submit" id="chat-send">Enviar</button>
+  </form>
+</div>
+
+<script src="chatbot.js"></script>
+</body>
+</html>
